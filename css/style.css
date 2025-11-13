@@ -421,7 +421,7 @@ form {
         max-width: 200px;
     }
     .banner{
-        padding: 100px;
+        padding: 100px 15px;
     }
 }
 @media screen and (max-width: 767px) {
