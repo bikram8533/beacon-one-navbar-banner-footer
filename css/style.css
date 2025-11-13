@@ -55,14 +55,27 @@ img {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-    align-items: center;
+	align-items: center;
 }
 .col-25 {
 	max-width: 23%;
 	flex: 0 0 23%;
 }
 /* Navbar */
-
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: var(--clr-white);
+    /* background-color: rgba(255, 0, 0, 0.5); */
+}
+.navbar .container {
+	max-width: 1400px;
+	width: 100%;
+	margin: 0 auto;
+}
 nav {
 	display: flex;
 	justify-content: space-between;
@@ -76,6 +89,7 @@ nav {
 	background-color: white;
 	padding: 80px 45px 33px;
 	border-radius: 50%;
+    max-width: 220px;
 }
 .navbar-collapsed {
 	display: flex;
@@ -95,6 +109,7 @@ nav {
 	line-height: 1.5;
 	padding: 12px 16px;
 	border-radius: 50px;
+	white-space: nowrap;
 }
 .primary-btn {
 	background-color: var(--clr-light-lavender);
@@ -107,9 +122,11 @@ nav {
 }
 
 /* Banner */
-
+.section-banner{
+    margin-top: 90px;
+}
 .banner {
-	height: 85vh;
+	height: calc(100vh - 90px);
 	background: linear-gradient(
 			to bottom,
 			rgba(234, 227, 234, 1) 0%,
@@ -123,15 +140,15 @@ nav {
 	border-radius: 24px;
 	overflow: hidden;
 	background-size: cover;
-	padding: 100px 0;
+	padding: 48px 0;
 }
 .banner-content {
 	text-align: center;
-    z-index: 20;
+	z-index: 20;
 }
 h1 {
 	font-family: 'SangBleu-Sunrise';
-	font-size: 54px;
+    font-size: clamp(40px, 5vw, 54px);
 	line-height: 1.2;
 	font-weight: 400;
 	margin-bottom: 22px;
@@ -156,7 +173,7 @@ h1 span {
 	overflow: hidden;
 	max-width: 1110px;
 	margin: 0 auto;
-	transform: translateY(10%);
+	transform: translateY(20px);
 
 	background: rgba(255, 255, 255, 0.2);
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
@@ -169,7 +186,7 @@ h1 span {
 }
 
 .contact-cta {
-    max-width: 945px;
+	max-width: 945px;
 
 	width: 100%;
 	margin: 0 auto;
@@ -235,15 +252,17 @@ h1 span {
 .footer-inr li a {
 	color: var(--clr-white);
 }
-.footer-logo{
-    margin: 16px 0;
+.footer-logo {
+	margin: 16px 0;
 }
-.quick-links, .additional-links, .connect{
-    margin: 16px 0;
+.quick-links,
+.additional-links,
+.connect {
+	margin: 16px 0;
 }
-.connect{
-    max-width: 345px;
-    width: 100%;
+.connect {
+	max-width: 345px;
+	width: 100%;
 }
 form {
 	margin-top: 32px;
@@ -287,8 +306,8 @@ form {
 }
 .social-links {
 	display: flex;
-    justify-content: flex-start;
-    align-items: center;
+	justify-content: flex-start;
+	align-items: center;
 	gap: 20px;
 }
 .social-links li {
@@ -310,7 +329,7 @@ form {
 .social-links li:hover {
 	background-color: var(--clr-dark-nevy);
 	border-color: var(--clr-lavender-blush);
-    transform: scale(1.2);
+	transform: scale(1.2);
 	transition: all 0.3s ease-out;
 }
 .social-links li:hover i {
@@ -367,46 +386,50 @@ form {
 		display: flex;
 	}
 
-    .col-md-50{
-        max-width: 50%;
-        flex: 0 0 49%;
-        text-align: center;
-    }
-    .contact-cta{
-        max-width: 600px;
-        width: 100%;
-    }
-    .footer-title::after{
-        display: none;
-    }
-    .footer-top-wrapper .row .col-25:nth-child(1){
-        order: 0;
-    }
-    .footer-top-wrapper .row .col-25:nth-child(2){
-        order: 2;
-    }
-    .footer-top-wrapper .row .col-25:nth-child(4){
-        order: 1;
-    }
+	.col-md-50 {
+		max-width: 50%;
+		flex: 0 0 49%;
+		text-align: center;
+	}
+	.contact-cta {
+		max-width: 600px;
+		width: 100%;
+	}
+	.footer-title::after {
+		display: none;
+	}
+	.footer-top-wrapper .row .col-25:nth-child(1) {
+		order: 0;
+	}
+	.footer-top-wrapper .row .col-25:nth-child(2) {
+		order: 2;
+	}
+	.footer-top-wrapper .row .col-25:nth-child(4) {
+		order: 1;
+	}
 
-    .social-links{
-        justify-content: center;
+	.social-links {
+		justify-content: center;
+	}
+	.connect {
+		margin: 0 auto;
+	}
+	.contact-cta p::after {
+		display: none;
+	}
+    .navbar-brand{
+        max-width: 200px;
     }
-    .connect{
-        margin: 0 auto;
+    .banner{
+        padding: 100px;
     }
-    .contact-cta p::after{
-        display: none;
-    }
-
 }
 @media screen and (max-width: 767px) {
-    .col-sm-100{
-        max-width: 100%;
-        flex: 0 0 100%;
-    }
-    .footer-top-wrapper .row .col-25:nth-child(4){
-        order: 3;
-    }
-
+	.col-sm-100 {
+		max-width: 100%;
+		flex: 0 0 100%;
+	}
+	.footer-top-wrapper .row .col-25:nth-child(4) {
+		order: 3;
+	}
 }

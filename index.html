@@ -39,8 +39,9 @@
 			</div>
 		</header>
 		<main>
-			<section class="banner">
+			<section class="section-banner">
 				<div class="container">
+                    <div class="banner">
 					<div class="banner-content">
 						<h1>Beacon One Capital <span>Where Vision Meets Opportunity.</span></h1>
 						<p>
@@ -55,6 +56,7 @@
 							<img src="./images/banner-top.png" alt="ware-house" />
 						</div>
 					</div>
+                    </div>
 				</div>
 			</section>
 			<section class="feedback"></section>
@@ -148,6 +150,10 @@
                 icon.classList.toggle('fa-bars');
                 icon.classList.toggle('fa-xmark');
             });
+
+            const nav = document.querySelector('.navbar');
+            const navHeight = nav.offsetHeight;
+            console.log(navHeight);
         </script>
 	</body>
 </html>
